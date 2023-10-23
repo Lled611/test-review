@@ -1,5 +1,5 @@
 create procedure syn.usp_ImportFileCustomerSeasonal
-	@ID_Record int
+	@IdRecord int
 as
 set nocount on
 begin
@@ -10,7 +10,7 @@ begin
 	if not exists (
 	select 1
 	from syn.ImportFile as f
-	where f.ID = @ID_Record
+	where f.ID = @IdRecord
 		and f.FlagLoaded = cast(1 as bit)
 	)
 		begin
