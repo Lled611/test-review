@@ -9,10 +9,10 @@ begin
 
 	-- Проверка на корректность загрузки
 	if not exists (
-	select 1
-	from syn.ImportFile as imf
-	where imf.ID = @IdRecord
-		and imf.FlagLoaded = cast(1 as bit)
+		select 1
+		from syn.ImportFile as imf
+		where imf.ID = @IdRecord
+			and imf.FlagLoaded = cast(1 as bit)
 	)
 	begin
 		set @ErrorMessage = 'Ошибка при загрузке файла, проверьте корректность данных'
